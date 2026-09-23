@@ -76,7 +76,6 @@ with DAG(dag_id='load_api_aws_kinesis', default_args={'owner': 'Sovan'}, tags=["
         task_id = 'extract_userposts',
         python_callable = _extract_userposts,
         op_kwargs={"new_api_user_id": int(Variable.get("api_user_id", default_var=-1))},
-        provide_context=True
     )
 
     write_userposts_to_stream = PythonOperator(
