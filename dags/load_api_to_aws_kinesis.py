@@ -85,7 +85,7 @@ def _extract_userposts(new_api_user_id, **context):
 
 def _process_user_posts(new_api_user_id, **context):
     try:
-        stream_name = "user-posts-data-stream"
+        stream_name = "airflow-user-post-data"
 
         # Pull the automatic return_value from _extract_userposts.
         user_posts = context["ti"].xcom_pull(
