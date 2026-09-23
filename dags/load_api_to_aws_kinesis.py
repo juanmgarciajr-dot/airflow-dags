@@ -42,7 +42,7 @@ def _extract_userposts(new_api_user_id=1, **context):
 
 def _process_user_posts(new_api_user_id=1, **context):
     try:
-        stream_name = "user-posts-data-stream"    
+        stream_name = "airflow-user-post-data"    
         user_posts = context['task_instance'].xcom_pull(task_ids='extract_userposts', key='user_posts')
         logger.info(f'api data|||user_posts:: {user_posts}')
 
